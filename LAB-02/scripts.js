@@ -176,8 +176,8 @@ function highlightSearchTerm(task, searchTerm) {
   const title = task.textContent.split(" - Data: ")[0];
   const dueDate = task.textContent.split(" - Data: ")[1];
 
-  task.innerHTML = title.replace(new RegExp(searchTerm, 'gi'), match => `<span class="highlight">${match}</span>`) + " - Data: " + dueDate;
-}
+  const highlightedTitle = title.replace(new RegExp(searchTerm, 'gi'), match => `<span class="highlight">${match}</span>`);
+  task.innerHTML = highlightedTitle + " - Data: " + dueDate;}
 
 const searchInput = document.getElementById("search");
 searchInput.addEventListener("input", searchTasks);
