@@ -46,8 +46,13 @@ function addTask() {
 
   const title = newTaskInput.value;
   const dueDate = dueDateInput.value;
-
-  if (title.length < 3 || title.length > 255) {
+  let text1 = title.substr(0,1);
+  let text2 = title.substr(title.length-1,title.length);
+  if (text1 == " " || text2 == " " ){
+    alert("Nie moze sie zaczynac lub konczyc spacja");
+    return;
+  }
+  if (title.length < 3 || title.length > 255 )  {
     alert("Musi zawierac od 3 do 255 znakow");
     return;
   }
@@ -68,6 +73,7 @@ function addTask() {
   searchInput.value = "";
 
   searchTasks();
+  loadTasks();
 }
 
 function editTask(taskList, task, li) {
@@ -87,13 +93,26 @@ function editTask(taskList, task, li) {
   titleInput.maxLength = 255;
 
   const dueDateInput = document.createElement("input");
-  dueDateInput.type = "datetime-local";
+dueDateInput.type = "datetime-local";
+
+if (Date.parse(dueDate)) {
   dueDateInput.value = new Date(dueDate).toISOString().slice(0, 16);
+} else {
+  //console.error("Niepoprawna data");
+}
+
+const saveButton = document.createElement("button");
+  saveButton.textContent = "Zapisz";
+  saveButton.onclick = function() {
+    saveEditedTask(taskList, task, li);
+  };
 
   li.textContent = "";
   li.appendChild(titleInput);
   li.appendChild(dueDateInput);
+  li.appendChild(saveButton); // Add the "Save" button
 }
+
 
 function saveEditedTask(taskList, task, li) {
   const titleInput = li.querySelector("input[type='text']");
@@ -101,7 +120,12 @@ function saveEditedTask(taskList, task, li) {
 
   const updatedTitle = titleInput.value;
   const updatedDueDate = dueDateInput.value;
-
+  let text1 = updatedTitle.substr(0,1);
+  let text2 = updatedTitle.substr(updatedTitle.length-1,updatedTitle.length);
+  if (text1 == " " || text2 == " " ){
+    alert("Nie moze sie zaczynac lub konczyc spacja");
+    return;
+  }
   if (updatedTitle.length < 3 || updatedTitle.length > 255) {
     alert("Musi zawierac od 3 do 255 znakow");
     return;
@@ -139,6 +163,7 @@ function saveEditedTask(taskList, task, li) {
 
     searchTasks();
   }
+  loadTasks();
 }
 
 function deleteTask(taskList, task) {
@@ -150,6 +175,7 @@ function deleteTask(taskList, task) {
     saveTasks(tasks);
     taskList.removeChild(taskList.childNodes[taskIndex]);
     searchTasks();
+    loadTasks();
   }
 }
 
