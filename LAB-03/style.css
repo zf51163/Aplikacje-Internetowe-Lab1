@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+}
+
+#map-container,
+#puzzle-table-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#map,
+#puzzle,
+#puzzle-table {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+#my-location-button,
+#download-map-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#my-location-button:hover,
+#download-map-button:hover {
+  background-color: #005fb0;
+}
+
+#puzzle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  margin: 5px;
+}
+
+#tiles {
+  height: 300px;
+  background-color: #cccccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tile {
+  margin: 2px;
+  width: 100px;
+  height: 100px;
+  z-index: 3;
+  position: relative;
+  text-align: center;
+  flex: 0 0 calc(12.5% - 4px);
+}
+
+a {
+  height: 100px;
+  width: 100px;
+}
+
+#puzzle-table td.drag-over {
+  background-color: lightblue; /* Lub inny kolor, aby wskazać miejsce dropowania */
+}
+#puzzle-table {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+#puzzle-table td {
+  width: 25%;
+  height: 25%;
+  border: 1px solid #000;
+}

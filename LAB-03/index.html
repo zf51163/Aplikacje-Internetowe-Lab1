@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja Puzzle</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="html2canvas.min.js"></script>
+    <script src="leaflet-image.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    
+
+</head>
+<body>
+    <div id="main-container">
+    <div id="map-container">
+    <table >
+        <td>
+        <div id="map"></div>
+        </td>
+        <td>
+            <table id="puzzle-table">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+    </table>
+        <button id="my-location-button">Moja lokalizacja</button>
+        <button id="download-map-button">Pobierz mapę</button>
+    </div>
+    </div>
+    <div id="puzzle-container">
+    </div>
+    <div id="tiles">
+        
+        <br>
+        <div id="tile1" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/1.png" alt="">
+        </div>
+        <div id="tile2" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/2.png" alt="">
+        </div>
+        <div id="tile3" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/3.png" alt="">
+        </div>
+        <div id="tile4" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/4.png" alt="">
+        </div>
+        <div id="tile5" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/5.png" alt="">
+        </div>
+        <div id="tile6" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/6.png" alt="">
+        </div>
+        <div id="tile7" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/7.png" alt="">
+        </div>
+        <div id="tile8" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/8.png" alt="">
+        </div>
+        <br>
+        <div id="tile9" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/9.png" alt="">
+        </div>
+        <div id="tile10" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/10.png" alt="">
+        </div>
+        <div id="tile11" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/11.png" alt="">
+        </div>
+        <div id="tile12" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/12.png" alt="">
+        </div>
+        <div id="tile13" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/13.png" alt="">
+        </div>
+        <div id="tile14" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/14.png" alt="">
+        </div>
+        <div id="tile15" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/15.png" alt="">
+        </div>
+        <div id="tile16" class="tile" draggable="true" ondragstart="drag(event)">
+            <img src="tiles/16.png" alt="">
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
