@@ -1,0 +1,20 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <label for="cityInput">Enter City:</label>
+<input type="text" id="cityInput" list="autocompleteList" oninput="getAutocomplete()" />
+<datalist id="autocompleteList"></datalist>
+<button onclick="getWeather()">Pogoda</button>
+
+<div id="weatherInfo"></div>
+
+    <script src="/js/weather.js"></script>
+</body>
+</html>
