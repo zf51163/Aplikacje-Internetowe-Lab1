@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "weather.html",
+  "name": "LabV",
+  "short_name": "LabV",
+  "version": "io.cordova.hellocordova",
+  "description": "zf51163-labV",
+  "author": "Apache Cordova Team"
+}
