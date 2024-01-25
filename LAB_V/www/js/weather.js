@@ -27,7 +27,7 @@ function displayAutocomplete(data) {
     });
 }
 
-const apiKey = '7ded80d91f2b280ec979100cc8bbba94';
+const apiKey = 'f98505ee472c49a0202fb7b00d4cbbd9';
 
 function getAutocomplete() {
     const cityInput = document.getElementById('cityInput').value;
